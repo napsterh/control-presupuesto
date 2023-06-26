@@ -1,6 +1,6 @@
 import React from 'react'
 
-function NuevoPresupuesto() {
+function NuevoPresupuesto({presupuesto, setPresupuesto}) {
    return (
       <div className='contenedor-presupuesto contenedor sombra'>
          <form className='formulario'>
@@ -10,6 +10,8 @@ function NuevoPresupuesto() {
                   className='nuevo-presupuesto'
                   type="text"
                   placeholder='Añade tu presupuesto'
+                  value={presupuesto}
+                  onChange={ e => setPresupuesto(e.target.value) }
                />
             </div>
             <input type="submit" value="Añadir"/>

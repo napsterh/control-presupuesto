@@ -3,10 +3,14 @@ import Header from './components/Header'
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  
+  const [ presupuesto, setPresupuesto ] = useState(0)
 
   return (
-    <Header/>
+    <Header
+      presupuesto={presupuesto}
+      setPresupuesto={setPresupuesto}
+    />
   )
 }
 
