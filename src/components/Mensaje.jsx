@@ -6,4 +6,4 @@ const Mensaje = ({children, tipo}) => {
    )
 }
 
-export default Mensaje
+export default Mensaje 
