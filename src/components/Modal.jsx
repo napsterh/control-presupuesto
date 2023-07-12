@@ -3,6 +3,7 @@ import CerrarBtn from '../img/cerrar.svg'
 
 const Modal = ({setModal, animarModal, setAnimarModal}) => {
 
+   const [ mensaje, setMensaje ] = useState('')
    const [ nombre, setNombre ] = useState('')
    const [ cantidad, setCantidad ] = useState('')
    const [ categoria, setCategoria ] = useState('')
@@ -15,6 +16,16 @@ const Modal = ({setModal, animarModal, setAnimarModal}) => {
       }, 500);
    }
 
+   const handleSubmit = (e) => {
+      e.preventDefault()
+
+      if([ nombre, cantidad, categoria ].includes('')){
+         setMensaje('Todos los campos son obligatorios')
+         return;
+      }
+
+   }
+
    return (
       <div className='modal'>  
          <div className='cerrar-modal'>
@@ -25,7 +36,7 @@ const Modal = ({setModal, animarModal, setAnimarModal}) => {
             />
          </div>
 
-         <form className={`formulario ${animarModal ? "animar" : '' }`}>
+         <form className={`formulario ${animarModal ? "animar" : 'cerrar' }`} onSubmit={handleSubmit}>
             <legend>Nuevo gasto</legend>
             <div className='campo'>
                <label htmlFor='nombre'>Nombre Gasto</label>
