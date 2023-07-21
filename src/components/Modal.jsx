@@ -24,7 +24,7 @@ const Modal = ({setModal, animarModal, setAnimarModal, guardarGasto}) => {
          setMensaje('Todos los campos son obligatorios')
   
 
-         
+
          setTimeout(() => {
             setMensaje('')
          }, 3000);
@@ -81,8 +81,7 @@ const Modal = ({setModal, animarModal, setAnimarModal, guardarGasto}) => {
                   <option value="gastos">Gastos varios</option>
                   <option value="ocio">Ocio</option>
                   <option value="salud">Salud</option>
-                  <option value="deporte">Deporte</option>
-                  <option value="Suscripciones">Suscripciones</option>
+                  <option value="suscripciones">Suscripciones</option>
                </select>
             </div>
             <input
