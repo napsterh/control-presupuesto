@@ -7,14 +7,17 @@ const  ControlPresupuesto = ({gastos, presupuesto}) => {
 
    useEffect(() => {
       const totalGastado = gastos.reduce( (total, gasto) => gasto.cantidad + total, 0)
-      setGastado(totalGastado) 
+      const totalDisponible = presupuesto - totalGastado
+
+      setGastado(totalGastado)
+      setDisponible(totalDisponible) 
    }, [gastos])
    
 
    const formatearCant = (cantidad) => {
-      return cantidad.toLocaleString('en-US', {
+      return cantidad.toLocaleString('es-PE', {
          style: 'currency',
-         currency: 'USD'
+         currency: 'PER'
       })
    }
 

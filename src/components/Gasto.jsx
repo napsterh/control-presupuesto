@@ -41,7 +41,7 @@ const Gasto = ({gasto}) => {
                </p>
             </div>
          </div>
-         <p className='cantidad-gasto'>${cantidad}</p>
+         <p className='cantidad-gasto'>S/{cantidad}</p>
       </div>
    )
 }
