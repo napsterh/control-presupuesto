@@ -6,6 +6,8 @@ import Modal from '../src/components/Modal'
 import { generarId } from './helpers'  
 
 function App() {
+
+  const [ gastos, setGastos ] = useState([])
   
   const [ presupuesto, setPresupuesto ] = useState(0)
   const [ isValidPresupuesto, setIsValidPresupuesto ] = useState(false)
@@ -36,6 +38,7 @@ function App() {
   return (
     <div className={modal && 'fijar'}>
         <Header
+        gastos={gastos}
         presupuesto={presupuesto}
         setPresupuesto={setPresupuesto}
         isValidPresupuesto={isValidPresupuesto}
