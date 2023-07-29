@@ -37,9 +37,6 @@ const Modal = ({
 
       if([ nombre, cantidad, categoria ].includes('')){
          setMensaje('Todos los campos son obligatorios')
-  
-
-
          setTimeout(() => {
             setMensaje('')
          }, 3000);
