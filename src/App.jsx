@@ -74,7 +74,9 @@ function App() {
         {modal && <Modal
           setModal={setModal}
           animarModal={animarModal}
+          setAnimarModal={setAnimarModal}
           guardarGasto={guardarGasto}
+          gastoEditar={gastoEditar}
         /> }
     </div>
   )
