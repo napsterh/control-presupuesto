@@ -34,6 +34,7 @@ const  ControlPresupuesto = ({gastos, presupuesto}) => {
          <div>
             <CircularProgressbar
                value={porcentaje}
+               text={'${porcentaje}% GAstado'}
             />
          </div>
          <div className='contenido-presupuesto'>
