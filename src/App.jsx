@@ -13,7 +13,7 @@ function App() {
   )
   
   const [ presupuesto, setPresupuesto ] = useState(
-    Number(localStorage.getItem('presupuesto',)) ?? 0 
+    Number(localStorage.getItem('presupuesto')) ?? 0 
   )
   const [ isValidPresupuesto, setIsValidPresupuesto ] = useState(false)
 
@@ -46,7 +46,6 @@ function App() {
   useEffect(() => {
     if(filtro){
       const gastosFiltrados = gastos.filter(  gasto => gasto.categoria === filtro )
-
       setGastosFiltrados(gastosFiltrados)
     }
   }, [filtro])
@@ -70,6 +69,7 @@ function App() {
   } 
 
   const guardarGasto = gasto => {
+    console.log("id homer", gasto)
     if(gasto.id){
       const gastosActualizado = gastos.map( gastoState => gastoState.id === gasto.id ? gasto : gastoState  ) 
       setGastos(gastosActualizado )
@@ -92,7 +92,7 @@ function App() {
   }
 
   return (
-    <div className={modal && 'fijar'}>
+    <div className={modal ? 'fijar' : ''}>
         <Header
         gastos={gastos}
         setGastos={setGastos}
@@ -133,6 +133,7 @@ function App() {
           setAnimarModal={setAnimarModal}
           guardarGasto={guardarGasto}
           gastoEditar={gastoEditar}
+          setGastoEditar={setGastoEditar}
         /> }
     </div>
   )

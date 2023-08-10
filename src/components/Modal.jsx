@@ -24,6 +24,7 @@ const Modal = ({
          setCantidad(gastoEditar.cantidad)
          setCategoria(gastoEditar.categoria)
          setId(gastoEditar.id)
+         console.log('gastoEditar ID', gastoEditar.id)
          setFecha(gastoEditar.fecha)
       }
    }, [])
