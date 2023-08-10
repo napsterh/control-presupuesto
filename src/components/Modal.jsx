@@ -7,13 +7,15 @@ const Modal = ({
    animarModal,
    setAnimarModal,
    guardarGasto,
-   gastoEditar
+   gastoEditar,
+   setGastoEditar
    }) => {
 
    const [ mensaje, setMensaje ] = useState('')
    const [ nombre, setNombre ] = useState('')
    const [ cantidad, setCantidad ] = useState('')
    const [ categoria, setCategoria ] = useState('')
+   const [ fecha, setFecha ] = useState('')
    const [ id, setId ] = useState('')
 
    useEffect(() => {
@@ -22,6 +24,7 @@ const Modal = ({
          setCantidad(gastoEditar.cantidad)
          setCategoria(gastoEditar.categoria)
          setId(gastoEditar.id)
+         setFecha(gastoEditar.fecha)
       }
    }, [])
    
@@ -34,7 +37,7 @@ const Modal = ({
       }, 500);
    }
 
-   const handleSubmit = (e) => {
+   const handleSubmit = e => {
       e.preventDefault()
 
       if([ nombre, cantidad, categoria ].includes('')){
@@ -45,7 +48,7 @@ const Modal = ({
          return;
       }
 
-      guardarGasto({nombre, cantidad, categoria, id})
+      guardarGasto({nombre, cantidad, categoria, id, fecha})
    }
 
    return (

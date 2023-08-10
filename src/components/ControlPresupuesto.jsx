@@ -2,7 +2,13 @@ import React, {useEffect, useState} from 'react'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
 import "react-circular-progressbar/dist/styles.css"
 
-const  ControlPresupuesto = ({gastos, presupuesto, setGastos, setPresupuesto, setIsValidPresupuesto}) => {
+const  ControlPresupuesto = ({
+   gastos,
+   presupuesto,
+   setGastos,
+   setPresupuesto,
+   setIsValidPresupuesto
+}) => {
 
    const [ disponible, setDisponible ] = useState(0)
    const [ gastado, setGastado ] = useState(0)
@@ -13,12 +19,13 @@ const  ControlPresupuesto = ({gastos, presupuesto, setGastos, setPresupuesto, se
       const totalDisponible = presupuesto - totalGastado
 
       //porcentaje gastado
-      const nuevoPorcentaje = ( (presupuesto - totalDisponible) / presupuesto ) * 100 
-      const redondeado = Math.round(nuevoPorcentaje * 100) / 100;
-      setPorcentaje(redondeado)
+      const nuevoPorcentaje = (( (presupuesto - totalDisponible) / presupuesto ) * 100 ).toFixed(2)
 
-      setGastado(totalGastado)
       setDisponible(totalDisponible) 
+      setGastado(totalGastado)
+      setTimeout(() => {
+         setPorcentaje(nuevoPorcentaje)
+      }, 1500);
    }, [gastos])
    
 

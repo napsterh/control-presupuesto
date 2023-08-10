@@ -3,12 +3,12 @@ import NuevoPresupuesto from "./NuevoPresupuesto";
 import ControlPresupuesto from "./ControlPresupuesto";
 
 const Header = ({
+      gastos,
+      setGastos,
       presupuesto,
       setPresupuesto,
       isValidPresupuesto,
-      setIsValidPresupuesto,
-      gastos,
-      setGastos
+      setIsValidPresupuesto
    }) => {
    return (
       <header>

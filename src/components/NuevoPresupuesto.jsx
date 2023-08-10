@@ -1,7 +1,12 @@
 import React, { useState } from 'react'
 import Mensaje from './Mensaje'
 
-function NuevoPresupuesto({presupuesto, setPresupuesto, isValidPresupuesto, setIsValidPresupuesto}) {
+const NuevoPresupuesto = ({
+   presupuesto,
+   setPresupuesto,
+   isValidPresupuesto,
+   setIsValidPresupuesto
+}) => {
 
    const [ mensaje, setMensaje ] = useState('')
 
